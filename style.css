@@ -341,7 +341,8 @@ section {
 }
 
 .contact {
-  padding: 100px 0;
+  padding: 100px 0 0 0;
+  height: auto;
 }
 
 .contact-grid {
@@ -476,4 +477,17 @@ section {
   .contact-image-side {
     display: none;
   }
+}
+
+.footer {
+  padding: 32px 0;
+  text-align: center;
+}
+
+.footer-text {
+  font-family: 'cabinet grotesk', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
