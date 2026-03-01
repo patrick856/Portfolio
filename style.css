@@ -1,0 +1,253 @@
+:root {
+  /* Backgrounds */
+  --bg-primary: #f5f2ee;       /* warm off-white, main background */
+  --bg-secondary: #edeae4;     /* slightly darker, for cards/sections */
+
+  /* Text */
+  --text-heading: #333333;     /* your chosen heading color */
+  --text-body: #555555;        /* softer for paragraphs, easier to read */
+  --text-muted: #888888;       /* labels, captions, small stuff */
+
+  /* Accent - Sage Green */
+  --accent: #7d9e8c;           /* main accent */
+  --accent-light: #a8c2b4;     /* hover states, backgrounds */
+  --accent-dark: #5a7a68;      /* pressed states, stronger emphasis */
+
+  /* Utility */
+  --border: #dddad4;           /* subtle dividers and borders */
+  --white: #ffffff;            /* pure white when needed */
+    background-color: var(--bg-primary);
+}
+
+@font-face {
+    font-family: 'cabinet grotesk';
+    src: url(Fonts/CabinetGrotesk-Variable.woff2) format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+.cursor {
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
+  z-index: 9999;
+}
+
+/* grow on hover over links/buttons */
+a:hover ~ .cursor,
+button:hover ~ .cursor {
+  width: 24px;
+  height: 24px;
+}
+
+/* hide default cursor */
+* {
+  cursor: none;
+  user-select: none;
+}
+
+.side-nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100dvh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.side-nav.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* the faded vertical line */
+.side-nav-line {
+  width: 1px;
+  height: 60%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--accent) 30%,
+    var(--accent) 70%,
+    transparent
+  );
+  opacity: 0.4;
+}
+
+/* section names */
+.side-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  
+  gap: 28px;
+  padding: 0 24px;
+  transition: transform 0.4s ease;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: block;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+/* active state — accent color + pushed left */
+.nav-link.active {
+  color: var(--accent-light);
+  transform: translateX(-6px);
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-snap-align: start;
+  height: 100dvh;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.grid-container {
+    display: grid;
+    height: 100dvh;
+    grid-template-columns: 2fr 1fr;
+    gap: clamp(16px, 3vw, 40px);
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 0 50px;
+}
+
+.hero {
+    position: relative;
+}
+
+.about {
+    background-color: var(--bg-secondary);
+}
+
+.about .about-text {
+    align-items: flex-start;
+}
+
+.hero .flex-container {
+    height: 100dvh;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.heading {
+    font-size: 4em;
+    font-family: fraunces;
+    font-weight: 200;
+    color: var(--text-heading);
+}
+
+.subheading {
+    font-size: 2em;
+    font-family: fraunces;
+    font-weight: 400;
+    color: var(--text-heading);     
+    padding: 0;
+}
+
+.body-text {
+    font-size: 1.5em;
+    font-family: 'cabinet grotesk';
+    font-weight: 400;
+    color: var(--text-body);
+    text-align: center;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.left {
+    text-align: left;
+}
+.profile-pic {
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    filter: grayscale(100%);
+}
+
+.accent-text {
+    color: var(--accent);
+}
+
+.accent-underline {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 6px;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--accent);
+}   
+
+.scroll-text {
+  font-family: 'cabinet grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.scroll-indicator svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--accent);
+}
+
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
