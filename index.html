@@ -8,6 +8,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
     </head>
     <body>
         <div class="cursor"></div>
@@ -97,27 +101,27 @@
                 <div class="contact-form-side">
                     <h3 class="section-label">Get in Touch</h3>
 
-                    <form class="contact-form">
+                    <form class="contact-form" id="contact-form">
+                       
+                        <div class="form-field">
+                            <label class="form-label">Name</label>
+                            <div class="form-divider"></div>
+                            <input type="text" name="Name" placeholder="Your name" class="form-input">
+                        </div>
 
-                    <div class="form-field">
-                        <label class="form-label">Name</label>
-                        <div class="form-divider"></div>
-                        <input type="text" placeholder="Your name" class="form-input">
-                    </div>
+                        <div class="form-field">
+                            <label class="form-label">Email</label>
+                            <div class="form-divider"></div>
+                            <input type="email" name="Email" placeholder="Your email" class="form-input">
+                        </div>
 
-                    <div class="form-field">
-                        <label class="form-label">Email</label>
-                        <div class="form-divider"></div>
-                        <input type="email" placeholder="Your email" class="form-input">
-                    </div>
+                        <div class="form-field">
+                            <label class="form-label">Message</label>
+                            <div class="form-divider"></div>
+                            <textarea name="Message" placeholder="What's on your mind" class="form-input form-textarea"></textarea>
+                        </div>
 
-                    <div class="form-field">
-                        <label class="form-label">Message</label>
-                        <div class="form-divider"></div>
-                        <textarea placeholder="What's on your mind" class="form-input form-textarea"></textarea>
-                    </div>
-
-                    <button type="submit" class="form-btn">Send</button>
+                        <button type="submit" class="form-btn">Send</button>
 
                     </form>
                 </div>
@@ -133,6 +137,7 @@
                 </div>
             </div>
         </section>
+
         <footer class="footer">
             <p class="footer-text">© 2026 patrick marcus</p>
         </footer>

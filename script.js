@@ -113,3 +113,47 @@ contactDetails.forEach(detail => {
     });
   });
 });
+
+const form = document.getElementById('contact-form');
+const submitBtn = form.querySelector('.form-btn');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  // change button text while sending
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch('https://formspree.io/f/xeelwrzg', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      submitBtn.textContent = 'Sent!';
+      submitBtn.style.borderColor = 'var(--accent-light)';
+      submitBtn.style.color = 'var(--accent-light)';
+      form.reset();
+      
+      // reset button after 3 seconds
+      setTimeout(() => {
+        submitBtn.textContent = 'Send';
+        submitBtn.style.borderColor = '';
+        submitBtn.style.color = '';
+        submitBtn.disabled = false;
+      }, 3000);
+
+    } else {
+      submitBtn.textContent = 'Failed — Try Again';
+      submitBtn.disabled = false;
+    }
+
+  } catch {
+    submitBtn.textContent = 'Failed — Try Again';
+    submitBtn.disabled = false;
+  }
+});

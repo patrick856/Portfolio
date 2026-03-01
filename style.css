@@ -1,7 +1,7 @@
 :root {
   /* Backgrounds */
   --bg-primary: #f5f2ee;       /* warm off-white, main background */
-  --bg-secondary: #edeae4;     /* slightly darker, for cards/sections */
+  --bg-secondary: #f0ede8;     /* slightly darker, for cards/sections */
 
   /* Text */
   --text-heading: #333333;     /* your chosen heading color */
@@ -17,6 +17,10 @@
   --border: #dddad4;           /* subtle dividers and borders */
   --white: #ffffff;            /* pure white when needed */
     background-color: var(--bg-primary);
+}
+
+body {
+  margin: 0;
 }
 
 @font-face {
@@ -258,11 +262,12 @@ section {
 }
 
 .projects {
-  padding: 30px 100px 0 100px;
+  padding: 0px 100px;
 }
 
 .projects h2{
   text-align: center;
+  padding-top: 50px;
 }
 
 .container {
@@ -341,8 +346,9 @@ section {
 }
 
 .contact {
-  padding: 100px 0 0 0;
+  padding: 100px 0 50px 0;
   height: auto;
+  background-color: var(--bg-secondary);
 }
 
 .contact-grid {
@@ -482,7 +488,7 @@ section {
 }
 
 .footer {
-  padding: 32px 0;
+  padding: 20px 0;
   text-align: center;
 }
 
