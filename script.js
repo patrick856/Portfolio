@@ -91,3 +91,25 @@ window.addEventListener('resize', () => {
     if (target) target.scrollIntoView({ behavior: 'instant' });
   }, 50);
 });
+
+const contactDetails = document.querySelectorAll('.contact-detail');
+
+contactDetails.forEach(detail => {
+  detail.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    const href = detail.getAttribute('href');
+    const value = href.replace('mailto:', '').replace('tel:', '');
+    
+    navigator.clipboard.writeText(value).then(() => {
+      const original = detail.textContent;
+      detail.textContent = 'Copied!';
+      detail.style.color = 'var(--accent)';
+      
+      setTimeout(() => {
+        detail.textContent = original;
+        detail.style.color = '';
+      }, 2000);
+    });
+  });
+});
