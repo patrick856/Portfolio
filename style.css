@@ -380,7 +380,7 @@ section {
   font-family: 'cabinet grotesk', sans-serif;
   font-size: 11px;
   font-weight: 400;
-  letter-spacing: 3px;
+  letter-spacing: 3.5px;
   text-transform: uppercase;
   color: var(--text-body);
 }
@@ -388,7 +388,7 @@ section {
 .form-divider {
   width: 100%;
   height: 1px;
-  margin: 0;
+  margin: 0 0 10px 0;
   background: var(--border);
 }
 
@@ -401,13 +401,36 @@ section {
   font-weight: 300;
   color: var(--text-body);
   padding: 4px 0;
-  margin-top: 10px;
   width: 100%;
   resize: none;
 }
 
+.input-wrapper {
+  position: relative;
+  padding: 0px 8px;
+}
+
+.input-wrapper .corner {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  transition: all 0.3s ease;
+}
+
+.input-wrapper .top-left     { top: 0; left: 0;     border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); }
+.input-wrapper .top-right    { top: 0; right: 0;    border-top: 1px solid var(--accent); border-right: 1px solid var(--accent); }
+.input-wrapper .bottom-left  { bottom: 0; left: 0;  border-bottom: 1px solid var(--accent); border-left: 1px solid var(--accent); }
+.input-wrapper .bottom-right { bottom: 0; right: 0; border-bottom: 1px solid var(--accent); border-right: 1px solid var(--accent); }
+
+/* grow corners on focus */
+.form-input:focus ~ .corner,
+.input-wrapper:focus-within .corner {
+  width: 16px;
+  height: 8px;
+}
+
 .form-input::placeholder {
-  color: var(--text-muted);
+  color: var(--text-body);
   opacity: 0.6;
 }
 
