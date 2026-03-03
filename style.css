@@ -128,7 +128,7 @@ button:hover ~ .cursor {
   .side-nav {
     display: none;
   }
-  
+
   * {
     cursor: auto !important;
   }
@@ -583,6 +583,13 @@ html {
   }
 
   .contact-image-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .contact-image {
     display: none;
   }
 }
