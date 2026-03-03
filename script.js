@@ -1,32 +1,34 @@
-const cursor = document.querySelector('.cursor');
+if (window.matchMedia('(pointer: fine)').matches) {
+    
+  const cursor = document.querySelector('.cursor');
 
-document.addEventListener('mousemove', (e) => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top  = e.clientY + 'px';
-});
-
-const links = document.querySelectorAll('a, button');
-
-links.forEach(link => {
-  link.addEventListener('mouseenter', () => {
-    cursor.style.width  = '28px';
-    cursor.style.height = '28px';
-    cursor.style.opacity = '0.6';
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top  = e.clientY + 'px';
   });
-  link.addEventListener('mouseleave', () => {
-    cursor.style.width  = '12px';
-    cursor.style.height = '12px';
+
+  const links = document.querySelectorAll('a, button');
+
+  links.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      cursor.style.width  = '28px';
+      cursor.style.height = '28px';
+      cursor.style.opacity = '0.6';
+    });
+    link.addEventListener('mouseleave', () => {
+      cursor.style.width  = '12px';
+      cursor.style.height = '12px';
+      cursor.style.opacity = '1';
+    });
+  });
+
+  document.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+  });
+  document.addEventListener('mouseenter', () => {
     cursor.style.opacity = '1';
   });
-});
-
-document.addEventListener('mouseleave', () => {
-  cursor.style.opacity = '0';
-});
-document.addEventListener('mouseenter', () => {
-  cursor.style.opacity = '1';
-});
-
+}
 const nav = document.querySelector('.side-nav');
 const hero = document.querySelector('.hero');
 const sections = document.querySelectorAll('section[id]');
