@@ -1,7 +1,7 @@
 :root {
   /* Backgrounds */
   --bg-primary: #f5f2ee;       /* warm off-white, main background */
-  --bg-secondary: #f0ede8;     /* slightly darker, for cards/sections */
+  --bg-secondary: #ffffff;     /* slightly darker, for cards/sections */
 
   /* Text */
   --text-heading: #333333;     /* your chosen heading color */
