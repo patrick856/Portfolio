@@ -423,16 +423,17 @@ html {
 }
 
 .contact {
-  padding: 20px 0 20px 0;
+  padding: 30px 24px 0px 24px;
   height: auto;
-  background-color: var(--bg-secondary);
+  
 }
 
 .contact .container {
   background-color: var(--bg-primary);
   padding-top: 80px;
   padding-bottom: 30px;
-  padding: 80px 130px 30px 130px;
+  padding: 70px 100px 50px 100px;
+  border: 0px solid var(--accent-dark) ;
 }
 
 .contact-grid {
@@ -599,6 +600,12 @@ html {
   .contact-image {
     display: none;
   }
+
+  .contact .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
 }
 
 .footer {
