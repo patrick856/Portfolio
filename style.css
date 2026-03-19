@@ -557,7 +557,7 @@ html {
 }
 
 .contact-image {
-  height: 500px;
+  height: 350px;
   object-fit: cover;
   filter: grayscale(100%);
   display: block;
