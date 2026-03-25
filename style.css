@@ -432,7 +432,7 @@ html {
   background-color: var(--bg-primary);
   padding-top: 80px;
   padding-bottom: 30px;
-  padding: 100px 100px 100px 100px;
+  padding: 100px;
   border: 0px solid var(--accent-dark) ;
 }
 
