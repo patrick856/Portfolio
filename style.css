@@ -145,6 +145,7 @@ html {
 
 .about, .projects, .contact {
   scroll-snap-align: none;
+  border-top: 1px solid var(--accent-dark); 
 }
 
 .container {
@@ -426,7 +427,6 @@ html {
 .contact {
   padding: 30px 24px 0px 24px;
   height: auto;
-  
 }
 
 .contact .container {
@@ -434,7 +434,6 @@ html {
   padding-top: 80px;
   padding-bottom: 30px;
   padding: 100px;
-  border: 0px solid var(--accent-dark) ;
 }
 
 .contact-grid {
@@ -612,6 +611,7 @@ html {
 .footer {
   padding: 20px 0;
   text-align: center;
+  border-top: 1px solid var(--accent-dark); 
 }
 
 .footer-text {
