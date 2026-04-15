@@ -301,6 +301,11 @@ html {
 
 .accent-text {
     color: var(--accent);
+    text-shadow:
+    -1px -1px 0 var(--bg-primary),
+     1px -1px 0 var(--bg-primary),
+    -1px  1px 0 var(--bg-primary),
+     1px  1px 0 var(--bg-primary);
 }
 
 .accent-underline {
